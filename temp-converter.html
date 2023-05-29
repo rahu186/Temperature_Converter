@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css ">
+    <style>
+      body
+      {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        background-color:rgb(243,246,250);
+      }
+        button{
+          width:100%;
+          height:70px;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          border-radius:15px;
+          border-width:0;
+          font-size: x-large;
+          font-weight: bolder;
+          color: white;
+          background-color: rgb(74, 74, 250);
+        }
+      #container{
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top:50px;
+       color:rgb(145,145,145);
+      }
+        label{
+          font-size: large;
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        input{
+          font-size: large;
+        }
+      .result{
+        display:flex;
+        flex-direction:column;
+        margin-top:20px;
+       color:rgb(145,145,145);
+      }
+
+      .result input{
+        height:40px ;
+        border-width:0 0 2px 0;
+      }
+
+      .degree{
+        display:flex;
+        flex-direction:column;
+        margin-right:20px;
+      }
+         
+      .degree input{
+        width:200px;
+        height:40px;
+        border-width:0 0 2px 0;
+      
+      }
+      .type{
+        display:flex;
+        flex-direction:column;
+      }
+     .temp-conv h3
+     {
+     text-align: center;
+     }
+
+     .temp-conv{
+      box-shadow: 2px 2px 2px 2px rgb(225,237,255);
+      padding:5px;
+      border-radius:7px;
+      background-color: rgb(255,255,255);
+     }
+      .type select{
+        width:170px;
+        height:45px;
+      }
+
+      .type select{
+       font-size: xx-large;
+       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       border-width:0 0 2px 0;
+      }
+
+      </style>
+    <title>Document</title>
+    <body>
+      <div class="temp-conv">
+        <h3>Temperature Converter</h3>
+        <div id="container">
+        <div class="degree">
+          <label>Degrees</label>
+          <input type="number" id="degree">
+        </div>
+
+        <div class="type">
+          <label>Type</label>
+          <select name="type" id="ddl">
+            <option id="celcius" value="C">Celcius</option>
+          <option value="F">Fahrenhite</option>
+        </select>
+        </div>
+
+       
+        </div>
+        <div class="result">
+          <label>Result</label>
+          <input type="text" id="result">
+        </div>
+        
+        <button id="convert" onclick="convert()">
+          Convert
+        </button>
+      </div>
+         
+      <script type="text/javascript">
+        function convert()
+        {
+        var d = document.getElementById("degree").value;
+        var e = document.getElementById("ddl");
+        var strUser = e.options[e.selectedIndex].value;
+        
+          if(strUser=='C')
+          {
+            var result = (d * 9/5) + 32;
+            
+            document.getElementById("result").value = result +" "+"F";
+          }
+          else
+          {
+            var result = [(d - 32)*5]/9;
+            document.getElementById("result").value = result +" "+"C";
+          }
+        }
+        </script>
+    </body>
+
+</html>
